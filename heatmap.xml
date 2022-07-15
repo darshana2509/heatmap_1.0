@@ -1,0 +1,24 @@
+<tool id="heatmap_1.0" name="Heatmap" version="1.0">
+    <description> heatmap plot </description>
+    <requirements>
+    <!--  <requirement type="package" version="R-3.6.0">R</requirement> -->
+  <!--container type="docker">globusgenomics/phyloseq_17072021</container -->
+    </requirements>
+    <command interpreter="Rscript">
+                heatmap_f.R ${inFILE} ${samps} ${heatmap_plot}
+    </command>
+    <inputs>
+        <param type="data" name="inFILE" label="Tabular file from metaQuantome stats or metaQuantome filter
+        "/>
+        <param label="Sample file" name="samps" type="data"/>
+        </inputs>
+    <outputs>
+     <data format="png" type="data" name="heatmap_plot" />
+    </outputs>
+    <help>
+        WHAT IT DOES?
+        
+        This tool creates a heatmap from the data generated from metaQuantome stats or metaQuantome filter.
+   
+    </help>
+</tool>
